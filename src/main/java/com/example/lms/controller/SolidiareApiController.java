@@ -21,12 +21,12 @@ public class SolidiareApiController {
     private final SolidiareApiService apiService;
 
     @PostMapping("/bankList")
-    public ResponseEntity<ApiResponse<Object>> bankList(PayloadRequest request){
+    public ResponseEntity<ApiResponse<Object>> bankList(@RequestBody  PayloadRequest request){
         return ResponseEntity.ok(ApiResponse.success("Bank list fetched successfully",  apiService.bankList(request)));
     }
 
     @PostMapping("/branchList")
-    public ResponseEntity<ApiResponse<Object>> branchList(PayloadRequest request){
+    public ResponseEntity<ApiResponse<Object>> branchList(@RequestBody PayloadRequest request){
         return ResponseEntity.ok(ApiResponse.success("Branch list fetched successfully",  apiService.branchList(request)));
     }
 
