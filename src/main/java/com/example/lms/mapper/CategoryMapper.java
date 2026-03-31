@@ -31,6 +31,9 @@ public interface CategoryMapper {
             """)
     Optional<CategoryResponse> findById(Long id);
 
+    @Select("SELECT id, name, description FROM tbl_category WHERE id = #{id}")
+    CategoryResponse getCategoryById(Long id);
+
 //    @Insert("INSERT INTO tbl_category(name, description) VALUES(#{name}, #{description})")
 //    @Options(useGeneratedKeys = true)
 //    void insert(CategoryRequest categoryRequest);
