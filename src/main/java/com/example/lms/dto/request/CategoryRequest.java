@@ -10,5 +10,5 @@ public class CategoryRequest {
     @NotBlank(message = "Category Name is Required.")
     private String name;
     
-    private TextArea description;
+    private String description;
 }
