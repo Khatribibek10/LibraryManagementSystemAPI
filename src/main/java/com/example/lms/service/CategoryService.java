@@ -2,7 +2,6 @@ package com.example.lms.service;
 
 import com.example.lms.dto.request.CategoryRequest;
 import com.example.lms.dto.response.CategoryResponse;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

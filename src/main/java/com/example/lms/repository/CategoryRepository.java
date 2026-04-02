@@ -1,6 +1,5 @@
 package com.example.lms.repository;
 
-import com.example.lms.entity.Author;
 import com.example.lms.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 

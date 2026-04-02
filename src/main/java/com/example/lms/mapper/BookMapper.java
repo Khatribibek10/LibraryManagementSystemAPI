@@ -2,7 +2,6 @@ package com.example.lms.mapper;
 
 import com.example.lms.dto.response.AuthorResponse;
 import com.example.lms.dto.response.BookResponse;
-import com.example.lms.dto.response.CategoryResponse;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

@@ -1,9 +1,7 @@
 package com.example.lms.service.impl;
 
 import com.example.lms.dto.request.CategoryRequest;
-import com.example.lms.dto.response.AuthorResponse;
 import com.example.lms.dto.response.CategoryResponse;
-import com.example.lms.entity.Author;
 import com.example.lms.entity.Category;
 import com.example.lms.exception.DuplicateResourceException;
 import com.example.lms.exception.ResourceNotFoundException;
@@ -11,7 +9,6 @@ import com.example.lms.mapper.CategoryMapper;
 import com.example.lms.repository.CategoryRepository;
 import com.example.lms.service.CategoryService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

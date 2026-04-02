@@ -2,12 +2,10 @@ package com.example.lms.controller;
 
 import com.example.lms.dto.request.BookRequest;
 import com.example.lms.dto.response.ApiResponse;
-import com.example.lms.dto.response.AuthorResponse;
 import com.example.lms.dto.response.BookResponse;
 import com.example.lms.service.BookService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

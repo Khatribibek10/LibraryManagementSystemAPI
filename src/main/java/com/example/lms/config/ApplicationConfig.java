@@ -2,9 +2,7 @@ package com.example.lms.config;
 
 import com.example.lms.repository.MemberRepository;
 import com.example.lms.exception.ResourceNotFoundException;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

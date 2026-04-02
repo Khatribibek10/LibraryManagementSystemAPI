@@ -1,11 +1,7 @@
 package com.example.lms.mapper;
 
-import com.example.lms.dto.request.CategoryRequest;
 import com.example.lms.dto.response.CategoryResponse;
-import com.example.lms.entity.Category;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import java.util.List;
 import java.util.Optional;

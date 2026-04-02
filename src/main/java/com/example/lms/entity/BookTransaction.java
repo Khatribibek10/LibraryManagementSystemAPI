@@ -1,5 +1,6 @@
 package com.example.lms.entity;
 
+import com.example.lms.enums.RentType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,9 +27,9 @@ public class BookTransaction {
     @Column(name = "to_date")
     private LocalDate toDate;
 
-//    @Enumerated(EnumType.STRING)
-//    @Column(name = "rent_status")
-//    private RentType rentStatus;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rent_status")
+    private RentType rentStatus;
 
     @Column(name = "active_closed")
     private Boolean activeClosed;

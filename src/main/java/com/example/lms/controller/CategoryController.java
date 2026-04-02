@@ -4,7 +4,6 @@ import com.example.lms.dto.request.CategoryRequest;
 import com.example.lms.dto.response.ApiResponse;
 import com.example.lms.dto.response.CategoryResponse;
 import com.example.lms.service.CategoryService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

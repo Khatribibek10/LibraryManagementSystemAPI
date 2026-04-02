@@ -7,6 +7,7 @@ import com.example.lms.dto.response.CategoryResponse;
 import com.example.lms.entity.Author;
 import com.example.lms.entity.Book;
 import com.example.lms.entity.Category;
+import com.example.lms.exception.DuplicateResourceException;
 import com.example.lms.exception.ResourceNotFoundException;
 import com.example.lms.mapper.BookMapper;
 import com.example.lms.repository.AuthorRepository;
@@ -14,7 +15,6 @@ import com.example.lms.repository.BookRepository;
 import com.example.lms.repository.CategoryRepository;
 import com.example.lms.service.BookService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +48,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResponse createBook(BookRequest request) {
 
+        if(request.getIsbn() != null && bookRepository.existsByIsbn(request.getIsbn()))
+        {
+            throw new DuplicateResourceException("Book with isbn already exists: " +request.getIsbn());
+        }
+
         Category category = categoryRepository.findById(request.getCategoryId())
                 .orElseThrow(() -> new ResourceNotFoundException("Category", "id", request.getCategoryId()));
 
@@ -77,6 +82,15 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResponse updateBook(Long id, BookRequest request) {
         Book book = findBookById(id);
+
+        if (request.getIsbn() != null) {
+            boolean isbnExists = bookRepository.existsByIsbnAndIdNot(request.getIsbn(), id);
+            if (isbnExists) {
+                throw new DuplicateResourceException(
+                        "Book with ISBN already exists: " + request.getIsbn()
+                );
+            }
+        }
 
         Category category = categoryRepository.findById(request.getCategoryId())
                 .orElseThrow(() -> new ResourceNotFoundException("Category", "id", request.getCategoryId()));

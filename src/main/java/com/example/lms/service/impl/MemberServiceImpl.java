@@ -5,9 +5,7 @@ import com.example.lms.entity.Member;
 import com.example.lms.exception.ResourceNotFoundException;
 import com.example.lms.repository.MemberRepository;
 import com.example.lms.service.MemberService;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
