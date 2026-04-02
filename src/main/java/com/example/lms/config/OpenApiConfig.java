@@ -16,20 +16,16 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("LMS - Library Management System API")
-                        .version("1.0.0")
-                        .description("RESTful API for Library Management System with JWT Authentication")
-                        .contact(new Contact()
-                                .name("LMS Team")
-                                .email("support@lms.com")))
-                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
-                .components(new Components()
+                        .title("Demo API")
+                        .version("1.0")
+                        .description("Demo application API documentation"))
+                        .components(new Components()
                         .addSecuritySchemes("bearerAuth", new SecurityScheme()
-                                .name("Authorization")
+                                .name("bearerAuth")
                                 .type(SecurityScheme.Type.HTTP)
                                 .scheme("bearer")
-                                .bearerFormat("JWT")
-                                .in(SecurityScheme.In.HEADER)
-                                .description("Enter JWT token with 'Bearer ' prefix")));
+                                .bearerFormat("JWT")));
     }
 }
+
+

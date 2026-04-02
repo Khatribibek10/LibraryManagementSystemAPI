@@ -4,6 +4,7 @@ import com.example.lms.dto.request.CategoryRequest;
 import com.example.lms.dto.response.ApiResponse;
 import com.example.lms.dto.response.CategoryResponse;
 import com.example.lms.service.CategoryService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1/category")
 @RestController
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class CategoryController {
     private final CategoryService categoryService;
 

@@ -4,6 +4,7 @@ import com.example.lms.dto.request.AuthorRequest;
 import com.example.lms.dto.response.ApiResponse;
 import com.example.lms.dto.response.AuthorResponse;
 import com.example.lms.service.AuthorService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.web.bind.annotation.RequestBody;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @Slf4j
+@SecurityRequirement(name = "bearerAuth")
 public class AuthorController {
     private final AuthorService authorService;
 
@@ -38,7 +40,6 @@ public class AuthorController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<AuthorResponse>> create(@RequestBody AuthorRequest request){
-        log.info("Author Request Body: {}" + request);
         AuthorResponse response = authorService.createAuthor(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.success("Author Created.", response));
     }
